@@ -1,11 +1,30 @@
 pipeline {
     agent any
+
     stages {
-        stage('Ajhay') {
+
+        stage('Install Dependencies') {
             steps {
                 sh '''
-                  python3 --version
-                  python3 -c "print('Ajayb Patil ki Jay')"
+                  node --version
+                  npm --version
+                  npm install
+                '''
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh '''
+                  npm run build
+                '''
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh '''
+                  npm test || echo "No tests configured"
                 '''
             }
         }

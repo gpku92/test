@@ -4,7 +4,7 @@ var config = {
 
   // 配置打包结果，path定义输出文件夹，filename定义打包结果文件的名称
   output: {
-    path: './',
+    path: './build',
     filename: 'index.js'
   },
 

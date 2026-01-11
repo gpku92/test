@@ -1,16 +1,14 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18-alpine'
-        }
-    }
+    agent any
 
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'node --version'
-                sh 'npm --version'
-                sh 'npm install'
+                sh '''
+                  node --version
+                  npm --version
+                  npm install
+                '''
             }
         }
 
@@ -22,7 +20,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'npm test'   // this will FAIL intentionally
+                sh 'npm test'   // intentional failure
             }
         }
 

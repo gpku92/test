@@ -21,9 +21,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-                    sh 'npm test'
-                }
+                sh 'npm test'
             }
         }
 

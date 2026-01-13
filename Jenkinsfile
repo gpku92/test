@@ -1,14 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'
-    }
-
-    environment {
-        SONAR_SCANNER_HOME = tool 'SonarScanner'
-    }
-
     stages {
 
         stage('Install Dependencies') {
@@ -38,9 +30,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    sh '''
-                      ${SONAR_SCANNER_HOME}/bin/sonar-scanner
-                    '''
+                    sh 'sonar-scanner'
                 }
             }
         }

@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
+import { render, screen } from '@testing-library/react'
+import '@testing-library/jest-dom'
+import App from '../src/App'
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>ganesh, helloworld!!!</div>
-    );
-  }
-}
-
-export default App;
+test('renders hello world text', () => {
+  render(<App />)
+  const textElement = screen.getByText(/ganesh, helloworld!!!/i)
+  expect(textElement).toBeInTheDocument()
+})

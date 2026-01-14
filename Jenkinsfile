@@ -24,6 +24,9 @@ pipeline {
                   npm --version
 
                   npm install
+
+                  echo "Installing Sonar scanner for npm"
+                  npm install @sonar/scan
                 '''
             }
         }
@@ -44,8 +47,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     sh '''
-                      echo "Installing Sonar scanner for npm"
-                      npm install -g @sonar/scan
+                     
 
                       echo "Running SonarQube analysis"
                       sonar \

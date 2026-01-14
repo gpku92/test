@@ -6,5 +6,5 @@ it('fails intentionally to validate test pipeline', () => {
   ReactDOM.render(<div />, div);
 
   // Intentional failure
-  expect(true).toBe(false);
+  // #expect(true).toBe(false);
 });

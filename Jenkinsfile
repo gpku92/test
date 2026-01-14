@@ -49,10 +49,10 @@ pipeline {
 
                       echo "Running SonarQube analysis"
                       sonar \
-                        -Dsonar.projectKey=gpku_test \
+                        -Dsonar.projectKey=pipeline-test \
                         -Dsonar.sources=. \
-                        -Dsonar.host.url=$SONAR_HOST_URL \
-                        -Dsonar.token=$SONAR_AUTH_TOKEN
+                        -Dsonar.host.url=http://localhost:9000 \
+                        -Dsonar.token=sqp_d8da38c37ddaa3dd8cfc33bca8d8b31aae9b8431
                     '''
                 }
             }

@@ -44,8 +44,15 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     sh '''
+                      echo "Installing Sonar scanner for npm"
+                      npm install -g @sonar/scan
+
                       echo "Running SonarQube analysis"
-                      sonar-scanner
+                      sonar \
+                        -Dsonar.projectKey=gpku_test \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=$SONAR_HOST_URL \
+                        -Dsonar.token=$SONAR_AUTH_TOKEN
                     '''
                 }
             }

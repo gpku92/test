@@ -1,4 +1,6 @@
-sonar \
-  -Dsonar.host.url=http://localhost:9000 \
-  -Dsonar.token=sqp_d8da38c37ddaa3dd8cfc33bca8d8b31aae9b8431 \
-  -Dsonar.projectKey=pipeline-test
+projectKey=gpku_test
+serverUrl=http://localhost:9000
+serverVersion=26.1.0.118079
+dashboardUrl=http://localhost:9000/dashboard?id=gpku_test
+ceTaskId=sqp_344c6a536ff96ed08412613dfc7d42ff02d029bb
+ceTaskUrl=http://localhost:9000/api/ce/task?id=0b205f82-b210-4f55-b9fb-d3d25b007901

@@ -7,7 +7,7 @@
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --config webpack.config.js",
     "test": "jest",
-    "scan": "sonar -Dsonar.projectKey=pipeline-test -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_d8da38c37ddaa3dd8cfc33bca8d8b31aae9b8431"
+    "scan": "sonar -Dsonar.projectKey=pipeline-test -Dsonar.sources=. -Dsonar.host.url=http://sonarqube:9000 -Dsonar.token=sqp_d8da38c37ddaa3dd8cfc33bca8d8b31aae9b8431"
   },
   "author": "",
   "license": "ISC",

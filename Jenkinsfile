@@ -50,11 +50,7 @@ pipeline {
                      
 
                       echo "Running SonarQube analysis"
-                      sonar \
-                        -Dsonar.projectKey=pipeline-test \
-                        -Dsonar.sources=. \
-                        -Dsonar.host.url=http://localhost:9000 \
-                        -Dsonar.token=sqp_d8da38c37ddaa3dd8cfc33bca8d8b31aae9b8431
+                      npm run scan
                     '''
                 }
             }
